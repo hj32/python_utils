@@ -1,7 +1,7 @@
 """
 String Utils
 """
-import string
+import datetime
 from io import StringIO
 
 
@@ -34,3 +34,12 @@ class StringBuilder:
         Return: string representing the content of the StringBuilder
         """
         return self._file_str.getvalue()
+
+
+def getMSSQLServerDate(date_time:datetime) -> str:
+    """
+    Use parameter method to get date time suitable for MS SQL Server
+    DateTime	YYYY-MM-DD hh:mm:ss[.nnn]
+    """
+    return date_time.isoformat(timespec='milliseconds', sep=' ')
+

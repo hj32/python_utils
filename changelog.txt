@@ -3,3 +3,5 @@ Created python utils module and tests
 Added fileutils.py with     getcurrentworkingdirectory() & getcurrentscriptdirectory()
 1.1
 Added StringBuilder class and associated tests
+
+1.2 Add getMSSQLServerDate function to stringutils, fixed return val on  

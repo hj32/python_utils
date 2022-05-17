@@ -1,11 +1,11 @@
 """
 Python file utilities
 """
-import string
+
 import pathlib
 
 
-def getcurrentscriptdirectory():
+def getcurrentscriptdirectory() -> str:
     """
     Get the current script directory
     Return: directory of this script
@@ -14,7 +14,7 @@ def getcurrentscriptdirectory():
     return script_dir
 
 
-def getcurrentworkingdirectory() -> string:
+def getcurrentworkingdirectory() -> str:
     """
     Get the current working directory
     Return: current working dir as string

@@ -1,6 +1,7 @@
 import unittest
 import os
 import sys
+import datetime as dt
 
 
 # Change the path varialbe so we can get at the
@@ -54,6 +55,24 @@ class Test_StringBuilder(unittest.TestCase):
         actual = sb.tostring()
         expected = test_string4
         self.assertEqual(actual, expected, "Test test_append_nested")
+
+    def test_getMSSQLServerDate(self):
+        """
+        Test the getMSSQLServerDate method
+        """
+        my_date = dt.datetime.now()
+        str_datetime = su.getMSSQLServerDate(my_date)
+        self.assertEqual(len(str_datetime), 23)
+
+    def test_getMsSQLServerDatefmt(self):
+        """
+        Test the getMSSQLServerDate method format
+        """
+        my_datetime = dt.datetime(2002, 1, 1, 12, 15, 55, 123000)
+        str_datetime = su.getMSSQLServerDate(my_datetime)
+
+        self.assertEqual('2002-01-01 12:15:55.123',
+                         str_datetime, "Test getMSSQLServerDate")
 
 
 if(__name__ == '__main__'):
